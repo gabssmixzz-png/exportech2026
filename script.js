@@ -8,7 +8,7 @@
 
   // ========== CONFIGURAÇÃO ==========
   // Substitua pela URL real do seu formulário Formspree
-  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzi7rN1zNK_RIeh2w-W3HTEf65b93PoRANjeV3pHuAeuUjdysyvTV9M8AeuX1QVifU4/exec';
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwD933KAWlecx5r_k_lKGwMNjkYxoCBbku3pZ59FVJRvYfvM58dg416MgQjjMZOgGtP/exec';
 
   // Data do evento: 05 de novembro de 2026, 18:30 (horário de Brasília)
   const EVENT_DATE = new Date('2026-11-05T18:30:00-03:00');
