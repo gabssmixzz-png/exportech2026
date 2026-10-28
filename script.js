@@ -7,7 +7,6 @@
   'use strict';
 
   // ========== CONFIGURAÇÃO ==========
-  // Substitua pela URL real do seu formulário Formspree
   const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwD933KAWlecx5r_k_lKGwMNjkYxoCBbku3pZ59FVJRvYfvM58dg416MgQjjMZOgGtP/exec';
 
   // Data do evento: 05 de novembro de 2026, 18:30 (horário de Brasília)
@@ -43,6 +42,7 @@
   function createParticles() {
     const count = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 18000), 70);
     particles = [];
+
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -58,6 +58,7 @@
 
   function drawParticles() {
     if (reducedMotion) return;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < particles.length; i++) {
@@ -65,6 +66,7 @@
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
+
         if (dist < 120) {
           ctx.beginPath();
           ctx.strokeStyle = `rgba(30, 111, 255, ${0.12 * (1 - dist / 120)})`;
@@ -79,6 +81,7 @@
     particles.forEach(p => {
       p.x += p.vx;
       p.y += p.vy;
+
       if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
       if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
@@ -96,9 +99,11 @@
       canvas.style.display = 'none';
       return;
     }
+
     resizeCanvas();
     createParticles();
     drawParticles();
+
     window.addEventListener('resize', () => {
       resizeCanvas();
       createParticles();
@@ -111,8 +116,10 @@
       s.classList.remove('active');
       s.setAttribute('aria-hidden', 'true');
     });
+
     screen.classList.add('active');
     screen.setAttribute('aria-hidden', 'false');
+
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
@@ -125,11 +132,13 @@
       showScreen(toScreen);
       toScreen.style.opacity = '0';
       toScreen.style.transform = 'scale(1.02)';
+
       requestAnimationFrame(() => {
         toScreen.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
         toScreen.style.opacity = '1';
         toScreen.style.transform = 'scale(1)';
       });
+
       if (callback) callback();
     }, 500);
   }
@@ -181,7 +190,9 @@
   }
 
   function clearErrors() {
-    document.querySelectorAll('.error-msg').forEach(el => (el.textContent = ''));
+    document.querySelectorAll('.error-msg').forEach(el => {
+      el.textContent = '';
+    });
   }
 
   function showFieldError(id, msg) {
@@ -203,22 +214,37 @@
 
     let valid = true;
 
+    // Verifica se a categoria selecionada é de estudante
+    const isStudent = [
+      'Estudante da escola',
+      'Estudante visitante de outra escola'
+    ].includes(category);
+
+    // Nome completo continua obrigatório para todos
     if (!fullName) {
       showFieldError('error-name', 'Informe o nome completo');
       valid = false;
     }
-    if (!serie) {
-      showFieldError('error-serie', 'Informe a série');
+
+    // Série obrigatória somente para estudantes
+    if (isStudent && !serie) {
+      showFieldError('error-serie', 'Informe sua série de escolaridade');
       valid = false;
     }
+
+    // Categoria continua obrigatória para todos
     if (!category) {
       showFieldError('error-category', 'Selecione a categoria');
       valid = false;
     }
-    if (!institution) {
-      showFieldError('error-institution', 'Informe a escola ou instituição');
+
+    // Instituição de ensino obrigatória somente para estudantes
+    if (isStudent && !institution) {
+      showFieldError('error-institution', 'Informe sua instituição de ensino');
       valid = false;
     }
+
+    // E-mail continua obrigatório para todos
     if (!email) {
       showFieldError('error-email', 'Informe o e-mail');
       valid = false;
@@ -226,6 +252,8 @@
       showFieldError('error-email', 'E-mail inválido');
       valid = false;
     }
+
+    // Confirmação de presença continua obrigatória para todos
     if (!presence) {
       showFieldError('error-presence', 'Selecione uma opção de presença');
       valid = false;
@@ -249,13 +277,15 @@
       email,
       phone: phone || '—',
       presence,
-      submittedAt: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
+      submittedAt: new Date().toLocaleString('pt-BR', {
+        timeZone: 'America/Sao_Paulo'
+      }),
       _subject: `Confirmação ExporTech 2026 — ${fullName}`
     };
 
     try {
       // Envia para o Google Apps Script
-      // mode: 'no-cors' é necessário por causa das restrições do Google
+      // mode: 'no-cors' é mantido conforme o código original
       await fetch(FORM_ENDPOINT, {
         method: 'POST',
         mode: 'no-cors',
@@ -265,19 +295,25 @@
         body: JSON.stringify(payload)
       });
 
-      // Com no-cors não conseguimos ler a resposta, então consideramos sucesso
-      // se a requisição foi enviada sem erro de rede
+      // Com no-cors não conseguimos ler a resposta
       rsvpForm.hidden = true;
       errorMessage.hidden = true;
       successMessage.hidden = false;
-      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      successMessage.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+
     } catch (err) {
       console.error(err);
+
       rsvpForm.hidden = true;
       successMessage.hidden = true;
       errorMessage.hidden = false;
+
       document.getElementById('error-text').textContent =
         'Não foi possível registrar sua presença no momento. Verifique sua conexão e tente novamente.';
+
     } finally {
       btn.disabled = false;
       btnText.hidden = false;
@@ -302,7 +338,7 @@
       try {
         await navigator.share(shareData);
       } catch (err) {
-        // usuário cancelou
+        // Usuário cancelou o compartilhamento
       }
     } else {
       copyLink();
@@ -312,7 +348,10 @@
   function copyLink() {
     navigator.clipboard.writeText(window.location.href).then(() => {
       copyFeedback.hidden = false;
-      setTimeout(() => (copyFeedback.hidden = true), 2500);
+      setTimeout(() => {
+        copyFeedback.hidden = true;
+      }, 2500);
+
     }).catch(() => {
       const input = document.createElement('input');
       input.value = window.location.href;
@@ -320,8 +359,11 @@
       input.select();
       document.execCommand('copy');
       document.body.removeChild(input);
+
       copyFeedback.hidden = false;
-      setTimeout(() => (copyFeedback.hidden = true), 2500);
+      setTimeout(() => {
+        copyFeedback.hidden = true;
+      }, 2500);
     });
   }
 
@@ -338,7 +380,9 @@
   });
 
   privacyModal.addEventListener('click', (e) => {
-    if (e.target === privacyModal) privacyModal.hidden = true;
+    if (e.target === privacyModal) {
+      privacyModal.hidden = true;
+    }
   });
 
   document.addEventListener('keydown', (e) => {
@@ -349,4 +393,5 @@
 
   // ========== INICIALIZAÇÃO ==========
   initParticles();
+
 })();
