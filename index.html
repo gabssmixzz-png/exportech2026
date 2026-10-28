@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="description" content="Convite Digital Oficial — ExporTech 2026 | Educação e Tecnologia — Escola Estadual Prof.ª Anésia Gonçalves Longuinhos, Pirapora-MG" />
+  <meta name="theme-color" content="#020617" />
+  <meta property="og:title" content="ExporTech 2026 — Convite Especial" />
+  <meta property="og:description" content="Você recebeu um convite especial. Conhecimento que transforma. Talentos que inspiram." />
+  <meta property="og:image" content="logo.png" />
+  <title>ExporTech 2026 — Convite Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========== TELA 1: MISTÉRIO ========== -->
+  <section id="screen-mystery" class="screen active" role="main">
+    <div class="mystery-content">
+      <div class="mystery-glow"></div>
+      <h1 class="mystery-title">VOCÊ RECEBEU UM<br><span>CONVITE ESPECIAL</span></h1>
+      <p class="mystery-subtitle">Uma experiência está prestes a ser revelada.<br>Você está preparado?</p>
+      <button id="btn-discover" class="btn-primary btn-glow" aria-label="Descobrir meu convite">
+        <span class="btn-text">DESCOBRIR MEU CONVITE</span>
+        <span class="btn-shine"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========== TELA 2: CONVITE COMPLETO (direto) ========== -->
+  <section id="screen-invite" class="screen" aria-hidden="true">
+    <main class="invite-main">
+
+      <!-- Logo + Identidade -->
+      <section class="hero-logo-section">
+        <div class="logo-wrapper">
+          <div class="logo-ring"></div>
+          <div class="logo-ring logo-ring-2"></div>
+          <img src="logo.png" alt="Logo oficial ExporTech" class="logo-hero" />
+        </div>
+        <h1 class="hero-title">EXPOSTECH 2026</h1>
+        <p class="hero-tagline">EDUCAÇÃO E TECNOLOGIA</p>
+        <p class="hero-quote">Conhecimento que transforma.<br>Talentos que inspiram.<br>Futuro que começa agora.</p>
+      </section>
+
+      <!-- Convite -->
+      <section class="invite-section" id="section-invite">
+        <h2 class="section-title">Você é nosso<br><span>convidado especial</span></h2>
+        <div class="invite-card">
+          <p>É com grande entusiasmo que convidamos você e sua família para a <strong>ExporTech 2026 — Educação e Tecnologia</strong>!</p>
+          <p>Este será um momento especial de valorização do conhecimento, do protagonismo estudantil e das oportunidades que a educação pode proporcionar.</p>
+          <p>Queremos compartilhar com você a importância de acreditar no potencial dos nossos estudantes, reconhecer suas conquistas e construir novas perspectivas para o futuro.</p>
+          <p>Sua presença torna esse momento ainda mais significativo.</p>
+          <p>Venha fazer parte dessa experiência e prestigiar uma iniciativa que aproxima a escola, as famílias e a comunidade.</p>
+          <p class="invite-closing">Esperamos por você!</p>
+        </div>
+      </section>
+
+      <!-- Data, Horário e Local (versão limpa e elegante) -->
+      <section class="invite-section" id="section-agenda">
+        <div class="event-info-card">
+          <div class="event-info-row">
+            <div class="event-info-item">
+              <span class="event-info-label">DATA</span>
+              <span class="event-info-value">05 de Novembro de 2026</span>
+            </div>
+            <div class="event-info-divider"></div>
+            <div class="event-info-item">
+              <span class="event-info-label">HORÁRIO</span>
+              <span class="event-info-value">18:30</span>
+            </div>
+          </div>
+
+          <div class="event-info-location">
+            <span class="event-info-label">LOCAL</span>
+            <span class="event-info-value">Escola Estadual Prof.ª Anésia Gonçalves Longuinhos</span>
+            <span class="event-info-address">Rua Raimundo Nascimento, 432 — Santos Dumont<br>Pirapora — Minas Gerais</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Raimundo+Nascimento+432+Santos+Dumont+Pirapora+MG" 
+               target="_blank" rel="noopener noreferrer" class="btn-map">
+              COMO CHEGAR
+            </a>
+          </div>
+        </div>
+
+        <!-- Contador regressivo -->
+        <div class="countdown-container" id="countdown">
+          <p class="countdown-label">CONTAGEM REGRESSIVA</p>
+          <div class="countdown-grid">
+            <div class="countdown-item">
+              <span class="countdown-number" id="cd-days">00</span>
+              <span class="countdown-unit">DIAS</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="cd-hours">00</span>
+              <span class="countdown-unit">HORAS</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="cd-mins">00</span>
+              <span class="countdown-unit">MIN</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="cd-secs">00</span>
+              <span class="countdown-unit">SEG</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Confirmação de Presença -->
+      <section class="invite-section" id="section-rsvp">
+        <h2 class="section-title">Confirme sua<br><span>presença</span></h2>
+        <p class="rsvp-intro">Ajude nossa equipe a se organizar. O preenchimento é rápido.</p>
+
+        <form id="rsvp-form" class="rsvp-form" novalidate>
+          <div class="form-group">
+            <label for="fullName">Nome completo <span class="required">*</span></label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="Seu nome completo" />
+            <span class="error-msg" id="error-name"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="serie">Série <span class="required">*</span></label>
+            <input type="text" id="serie" name="serie" required placeholder="Ex: 9º ano, 2º EM, 3º EM..." />
+            <span class="error-msg" id="error-serie"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Categoria do visitante <span class="required">*</span></label>
+            <select id="category" name="category" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="Familiar ou responsável">Familiar ou responsável</option>
+              <option value="Estudante da escola">Estudante da escola</option>
+              <option value="Estudante visitante de outra escola">Estudante visitante de outra escola</option>
+              <option value="Professor ou profissional da educação">Professor ou profissional da educação</option>
+              <option value="Representante de instituição ou convidado">Representante de instituição ou convidado</option>
+              <option value="Membro da comunidade">Membro da comunidade</option>
+              <option value="Outro">Outro</option>
+            </select>
+            <span class="error-msg" id="error-category"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="institution">Escola ou instituição <span class="required">*</span></label>
+            <input type="text" id="institution" name="institution" required placeholder="Nome da escola ou instituição" />
+            <span class="error-msg" id="error-institution"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail para contato <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="seu@email.com" />
+            <span class="error-msg" id="error-email"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefone ou WhatsApp <span class="optional">(opcional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(38) 99999-9999" />
+          </div>
+
+          <div class="form-group">
+            <label>Confirmação de presença <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="presence" value="Sim, estarei presente!" required />
+                <span class="radio-custom"></span>
+                Sim, estarei presente!
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="presence" value="Ainda não tenho certeza" />
+                <span class="radio-custom"></span>
+                Ainda não tenho certeza
+              </label>
+            </div>
+            <span class="error-msg" id="error-presence"></span>
+          </div>
+
+          <div class="privacy-notice">
+            <p><strong>Aviso de Privacidade:</strong> Os dados coletados serão utilizados exclusivamente para organização e comunicação relacionadas à ExporTech 2026. Não serão compartilhados com terceiros. O tratamento de dados de menores de idade segue as orientações da escola e a legislação vigente (LGPD). Ao enviar, você concorda com este uso.</p>
+          </div>
+
+          <button type="submit" class="btn-primary btn-glow btn-submit" id="btn-submit">
+            <span class="btn-text">CONFIRMAR MINHA PRESENÇA</span>
+            <span class="btn-loader" hidden></span>
+            <span class="btn-shine"></span>
+          </button>
+        </form>
+
+        <div id="success-message" class="success-panel" hidden>
+          <div class="success-icon">✓</div>
+          <h3>PRESENÇA REGISTRADA!</h3>
+          <p>Obrigado por fazer parte da ExporTech 2026!</p>
+          <p>Sua resposta foi recebida com sucesso. Estamos preparando esse momento com muito carinho e esperamos encontrar você em breve.</p>
+          <p class="success-closing">Até lá!</p>
+        </div>
+
+        <div id="error-message" class="error-panel" hidden>
+          <h3>Ops! Algo deu errado</h3>
+          <p id="error-text">Não foi possível registrar sua presença. Por favor, tente novamente.</p>
+          <button type="button" class="btn-secondary" id="btn-retry">Tentar novamente</button>
+        </div>
+      </section>
+
+      <!-- Compartilhar -->
+      <section class="invite-section section-share" id="section-share">
+        <div class="share-card">
+          <p class="share-title">Gostou do convite?</p>
+          <p class="share-text">Compartilhe com familiares e amigos</p>
+          <div class="share-buttons">
+            <button id="btn-share" class="btn-primary btn-glow btn-share">
+              <span class="btn-text">COMPARTILHAR</span>
+              <span class="btn-shine"></span>
+            </button>
+            <button id="btn-copy" class="btn-secondary">
+              COPIAR LINK
+            </button>
+          </div>
+          <p id="copy-feedback" class="copy-feedback" hidden>Link copiado!</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="invite-footer">
+      <img src="logo.png" alt="ExporTech" class="footer-logo" />
+      <div class="footer-text">
+        <strong>EXPOSTECH 2026</strong>
+        <span>EDUCAÇÃO E TECNOLOGIA</span>
+        <span>Escola Estadual Prof.ª Anésia Gonçalves Longuinhos</span>
+        <span>Pirapora — Minas Gerais</span>
+      </div>
+      <a href="#privacy" class="footer-privacy" id="btn-privacy">Aviso de Privacidade</a>
+    </footer>
+  </section>
+
+  <!-- Modal de Privacidade -->
+  <div id="privacy-modal" class="modal" hidden>
+    <div class="modal-content">
+      <button class="modal-close" id="close-privacy" aria-label="Fechar">×</button>
+      <h3>Aviso de Privacidade</h3>
+      <p>A ExporTech 2026, promovida pela comunidade escolar da Escola Estadual Prof.ª Anésia Gonçalves Longuinhos, coleta os seguintes dados por meio do formulário de confirmação de presença:</p>
+      <ul>
+        <li>Nome completo</li>
+        <li>Série</li>
+        <li>Categoria do visitante</li>
+        <li>Escola ou instituição</li>
+        <li>E-mail</li>
+        <li>Telefone ou WhatsApp (quando informado)</li>
+        <li>Situação da confirmação de presença</li>
+        <li>Data e horário do envio</li>
+      </ul>
+      <p>Finalidade: organização do evento, estimativa de público e comunicação relacionada exclusivamente à ExporTech 2026.</p>
+      <p>Os dados não serão comercializados nem compartilhados com terceiros. O acesso é restrito à equipe responsável pela organização.</p>
+      <p>Tratamento de dados de menores: respeitamos a LGPD e as orientações da escola. Responsáveis devem preencher ou autorizar o envio de dados de menores de idade.</p>
+      <p>Para solicitar exclusão ou correção de dados, entre em contato com a escola pelo e-mail oficial ou telefone institucional.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
