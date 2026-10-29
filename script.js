@@ -7,7 +7,7 @@
   'use strict';
 
   // ========== CONFIGURAÇÃO ==========
-  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzMMT1Mwkiqgs5wXsbbZvoFfxROCZyGcpf7H_bHBpDqF0MLawmSAPsMRcI4Q7KCdreZ/exec';
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxwXX7xw-3A4-UsZRPRJwV_XT1b2taDKohzAXt5ob-72BcuXiCf-uu387EEeBsmhMty/exec';
 
   // Data do evento: 05 de novembro de 2026, 18:30 (horário de Brasília)
   const EVENT_DATE = new Date('2026-11-05T18:30:00-03:00');
