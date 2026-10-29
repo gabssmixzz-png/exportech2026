@@ -1109,3 +1109,99 @@ body {
     margin-top: -1.5rem;
   }
 }
+/* ==========================================
+EXPORTECH 2026 — CARD DE DATA E CONTAGEM
+========================================== */
+
+/* Organiza data, horário e contagem verticalmente */
+.event-info-complete {
+display: flex;
+flex-direction: column;
+padding: 2rem 1.5rem;
+}
+
+/* Data e horário ficam um embaixo do outro */
+.event-info-complete .event-info-row {
+display: flex;
+flex-direction: column;
+gap: 0;
+margin: 0;
+padding: 0;
+border: none;
+}
+
+.event-info-complete .event-info-item {
+width: 100%;
+min-width: 0;
+padding: 1.25rem 0;
+text-align: center;
+}
+
+/* Linha elegante entre as informações */
+.event-info-complete .event-info-item + .event-info-item {
+border-top: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+/* Contagem regressiva na mesma sequência */
+.event-info-complete .countdown-container {
+width: 100%;
+margin: 0;
+padding: 1.5rem 0 0;
+background: transparent;
+border: none;
+border-radius: 0;
+border-top: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+/* Números brancos */
+.event-info-complete .countdown-number {
+color: #ffffff !important;
+-webkit-text-fill-color: #ffffff !important;
+}
+
+/* Espaçamento dos blocos da contagem */
+.event-info-complete .countdown-grid {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 0.65rem;
+}
+
+.event-info-complete .countdown-item {
+background: rgba(30, 111, 255, 0.12);
+border: 1px solid rgba(34, 211, 238, 0.25);
+border-radius: 12px;
+}
+
+/* Remove o botão de confirmação abaixo da contagem */
+.rsvp-cta {
+display: none !important;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 600px) {
+.event-info-complete {
+padding: 1.5rem 1rem;
+}
+
+.event-info-complete .event-info-item {
+padding: 1rem 0;
+}
+
+.event-info-complete .countdown-container {
+padding-top: 1.25rem;
+}
+
+.event-info-complete .countdown-grid {
+gap: 0.4rem;
+}
+
+.event-info-complete .countdown-item {
+min-width: 55px;
+padding: 0.7rem 0.3rem;
+}
+
+.event-info-complete .countdown-number {
+font-size: 1.35rem;
+}
+}
