@@ -978,3 +978,20 @@ body {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
 }
+/* Contagem regressiva da ExporTech */
+.countdown-container {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-top: 1px solid rgba(34, 211, 238, 0.2);
+  margin-top: 1.5rem;
+  padding: 1.5rem 0 0;
+}
+.countdown-number {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.countdown-item {
+  background: rgba(30, 111, 255, 0.12);
+  border-color: rgba(34, 211, 238, 0.25);
+}
