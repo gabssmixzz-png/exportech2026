@@ -995,3 +995,117 @@ body {
   background: rgba(30, 111, 255, 0.12);
   border-color: rgba(34, 211, 238, 0.25);
 }
+/* ==========================================
+   EXPORTECH 2026 — AJUSTES DO CONVITE
+   ========================================== */
+
+/* Data, horário e contagem no mesmo card */
+.event-info-complete {
+  padding: 2rem 1.5rem;
+}
+
+.event-info-complete .event-info-row {
+  margin-bottom: 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+.event-info-complete .event-info-item {
+  flex: 1;
+  min-width: 150px;
+}
+
+.event-info-complete .event-info-value {
+  font-size: 1.1rem;
+}
+
+/* Contagem integrada ao card principal */
+.event-info-complete .countdown-container {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 1.5rem 0 0;
+}
+
+.event-info-complete .countdown-label {
+  margin-bottom: 1rem;
+}
+
+.event-info-complete .countdown-number {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.event-info-complete .countdown-item {
+  background: rgba(30, 111, 255, 0.12);
+  border-color: rgba(34, 211, 238, 0.25);
+}
+
+/* Botão de confirmação */
+.rsvp-cta {
+  display: flex;
+  justify-content: center;
+  margin: -1.5rem 0 3.5rem;
+  padding: 0 1rem;
+}
+
+.btn-rsvp-open {
+  width: 100%;
+  max-width: 360px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Localização simplificada */
+#section-location .event-info-location {
+  border-top: none;
+  padding-top: 0;
+}
+
+#section-location .event-info-label {
+  margin-bottom: 1rem;
+}
+
+#section-location .event-info-value {
+  margin-bottom: 0.5rem;
+}
+
+#section-location .event-info-address {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .event-info-complete {
+    padding: 1.5rem 1rem;
+  }
+
+  .event-info-complete .event-info-row {
+    gap: 1rem;
+  }
+
+  .event-info-complete .event-info-item {
+    min-width: 120px;
+  }
+
+  .event-info-complete .event-info-value {
+    font-size: 0.95rem;
+  }
+
+  .event-info-complete .countdown-grid {
+    gap: 0.4rem;
+  }
+
+  .event-info-complete .countdown-item {
+    min-width: 55px;
+    padding: 0.7rem 0.3rem;
+  }
+
+  .event-info-complete .countdown-number {
+    font-size: 1.35rem;
+  }
+
+  .rsvp-cta {
+    margin-top: -1.5rem;
+  }
+}
