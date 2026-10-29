@@ -16,25 +16,28 @@
 </head>
 <body>
   <canvas id="particles-canvas" aria-hidden="true"></canvas>
-
   <!-- ========== TELA 1: MISTÉRIO ========== -->
   <section id="screen-mystery" class="screen active" role="main">
     <div class="mystery-content">
       <div class="mystery-glow"></div>
-      <h1 class="mystery-title">VOCÊ RECEBEU UM<br><span>CONVITE ESPECIAL</span></h1>
-      <p class="mystery-subtitle">Uma experiência está prestes a ser revelada.<br>Você está preparado?</p>
+      <h1 class="mystery-title">
+        VOCÊ RECEBEU UM<br>
+        <span>CONVITE ESPECIAL</span>
+      </h1>
+      <p class="mystery-subtitle">
+        Uma experiência está prestes a ser revelada.<br>
+        Você está preparado?
+      </p>
       <button id="btn-discover" class="btn-primary btn-glow" aria-label="Descobrir meu convite">
         <span class="btn-text">DESCOBRIR MEU CONVITE</span>
         <span class="btn-shine"></span>
       </button>
     </div>
   </section>
-
-  <!-- ========== TELA 2: CONVITE COMPLETO (direto) ========== -->
+  <!-- ========== TELA 2: CONVITE COMPLETO ========== -->
   <section id="screen-invite" class="screen" aria-hidden="true">
     <main class="invite-main">
-
-      <!-- Logo + Identidade -->
+      <!-- LOGO + IDENTIDADE -->
       <section class="hero-logo-section">
         <div class="logo-wrapper">
           <div class="logo-ring"></div>
@@ -43,12 +46,18 @@
         </div>
         <h1 class="hero-title">EXPORTECH 2026</h1>
         <p class="hero-tagline">EDUCAÇÃO E TECNOLOGIA</p>
-        <p class="hero-quote">Conhecimento que transforma.<br>Talentos que inspiram.<br>Futuro que começa agora.</p>
+        <p class="hero-quote">
+          Conhecimento que transforma.<br>
+          Talentos que inspiram.<br>
+          Futuro que começa agora.
+        </p>
       </section>
-
-      <!-- Convite -->
+      <!-- CONVITE -->
       <section class="invite-section" id="section-invite">
-        <h2 class="section-title">Você é nosso<br><span>convidado especial</span></h2>
+        <h2 class="section-title">
+          Você é nosso<br>
+          <span>convidado especial</span>
+        </h2>
         <div class="invite-card">
           <p>É com grande entusiasmo que convidamos você e sua família para a <strong>ExporTech 2026 — Educação e Tecnologia</strong>!</p>
           <p>Este será um momento especial de valorização do conhecimento, do protagonismo estudantil e das oportunidades que a educação pode proporcionar em nossa escola.</p>
@@ -58,8 +67,7 @@
           <p class="invite-closing">Esperamos por você!</p>
         </div>
       </section>
-
-      <!-- Data, Horário e Local (versão limpa e elegante) -->
+      <!-- DATA, HORÁRIO E CONTAGEM REGRESSIVA -->
       <section class="invite-section" id="section-agenda">
         <div class="event-info-card">
           <div class="event-info-row">
@@ -73,19 +81,8 @@
               <span class="event-info-value">18:30</span>
             </div>
           </div>
-
-          <div class="event-info-location">
-            <span class="event-info-label">LOCAL</span>
-            <span class="event-info-value">Escola Estadual Prof.ª Anésia Gonçalves Longuinhos</span>
-            <span class="event-info-address">Rua Raimundo Nascimento, 432 — Santos Dumont<br>Pirapora — Minas Gerais</span>
-            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Raimundo+Nascimento+432+Santos+Dumont+Pirapora+MG" 
-               target="_blank" rel="noopener noreferrer" class="btn-map">
-              COMO CHEGAR
-            </a>
-          </div>
         </div>
-
-        <!-- Contador regressivo -->
+        <!-- CONTAGEM REGRESSIVA -->
         <div class="countdown-container" id="countdown">
           <p class="countdown-label">CONTAGEM REGRESSIVA</p>
           <div class="countdown-grid">
@@ -108,27 +105,47 @@
           </div>
         </div>
       </section>
-
-      <!-- Confirmação de Presença -->
+      <!-- CONFIRMAÇÃO DE PRESENÇA -->
       <section class="invite-section" id="section-rsvp">
-        <h2 class="section-title">Confirme sua<br><span>presença</span></h2>
-        <p class="rsvp-intro">Ajude nossa equipe a se organizar. O preenchimento é rápido.</p>
-
+        <h2 class="section-title">
+          Confirme sua<br>
+          <span>presença</span>
+        </h2>
+        <p class="rsvp-intro">
+          Ajude nossa equipe a se organizar. O preenchimento é rápido.
+        </p>
         <form id="rsvp-form" class="rsvp-form" novalidate>
           <div class="form-group">
-            <label for="fullName">Nome completo <span class="required">*</span></label>
-            <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="Seu nome completo" />
+            <label for="fullName">
+              Nome completo <span class="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              required
+              autocomplete="name"
+              placeholder="Seu nome completo"
+            />
             <span class="error-msg" id="error-name"></span>
           </div>
-
           <div class="form-group">
-  <label for="serie">Série de escolaridade <span class="optional">(obrigatória para estudantes)</span></label>
-  <input type="text" id="serie" name="serie" placeholder="Ex: 9º ano do Fundamental, 2º ano do Ensino Médio..." />
-  <span class="error-msg" id="error-serie"></span>
-</div>
-
+            <label for="serie">
+              Série de escolaridade
+              <span class="optional">(obrigatória para estudantes)</span>
+            </label>
+            <input
+              type="text"
+              id="serie"
+              name="serie"
+              placeholder="Ex: 9º ano do Fundamental, 2º ano do Ensino Médio..."
+            />
+            <span class="error-msg" id="error-serie"></span>
+          </div>
           <div class="form-group">
-            <label for="category">Categoria do visitante <span class="required">*</span></label>
+            <label for="category">
+              Categoria do visitante <span class="required">*</span>
+            </label>
             <select id="category" name="category" required>
               <option value="" disabled selected>Selecione uma opção</option>
               <option value="Familiar ou responsável">Familiar ou responsável</option>
@@ -141,52 +158,85 @@
             </select>
             <span class="error-msg" id="error-category"></span>
           </div>
-
           <div class="form-group">
-  <label for="institution">Instituição de ensino <span class="optional">(obrigatória para estudantes)</span></label>
-  <input type="text" id="institution" name="institution" placeholder="Nome da escola onde estuda" />
-  <span class="error-msg" id="error-institution"></span>
-</div>
-
+            <label for="institution">
+              Instituição de ensino
+              <span class="optional">(obrigatória para estudantes)</span>
+            </label>
+            <input
+              type="text"
+              id="institution"
+              name="institution"
+              placeholder="Nome da escola onde estuda"
+            />
+            <span class="error-msg" id="error-institution"></span>
+          </div>
           <div class="form-group">
-            <label for="email">E-mail para contato <span class="required">*</span></label>
-            <input type="email" id="email" name="email" required autocomplete="email" placeholder="seu@email.com" />
+            <label for="email">
+              E-mail para contato <span class="required">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="seu@email.com"
+            />
             <span class="error-msg" id="error-email"></span>
           </div>
-
           <div class="form-group">
-            <label for="phone">Telefone ou WhatsApp <span class="optional">(opcional)</span></label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(38) 99999-9999" />
+            <label for="phone">
+              Telefone ou WhatsApp <span class="optional">(opcional)</span>
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="(38) 99999-9999"
+            />
           </div>
-
           <div class="form-group">
-            <label>Confirmação de presença <span class="required">*</span></label>
+            <label>
+              Confirmação de presença <span class="required">*</span>
+            </label>
             <div class="radio-group">
               <label class="radio-label">
-                <input type="radio" name="presence" value="Sim, estarei presente!" required />
+                <input
+                  type="radio"
+                  name="presence"
+                  value="Sim, estarei presente!"
+                  required
+                />
                 <span class="radio-custom"></span>
                 Sim, estarei presente!
               </label>
               <label class="radio-label">
-                <input type="radio" name="presence" value="Ainda não tenho certeza" />
+                <input
+                  type="radio"
+                  name="presence"
+                  value="Ainda não tenho certeza"
+                />
                 <span class="radio-custom"></span>
                 Ainda não tenho certeza
               </label>
             </div>
             <span class="error-msg" id="error-presence"></span>
           </div>
-
           <div class="privacy-notice">
-            <p><strong>Aviso de Privacidade:</strong> Os dados coletados serão utilizados exclusivamente para organização e comunicação relacionadas à ExporTech 2026. Não serão compartilhados com terceiros. O tratamento de dados de menores de idade segue as orientações da escola e a legislação vigente (LGPD). Ao enviar, você concorda com este uso.</p>
+            <p>
+              <strong>Aviso de Privacidade:</strong>
+              Os dados coletados serão utilizados exclusivamente para organização e comunicação relacionadas à ExporTech 2026. Não serão compartilhados com terceiros. O tratamento de dados de menores de idade segue as orientações da escola e a legislação vigente (LGPD). Ao enviar, você concorda com este uso.
+            </p>
           </div>
-
           <button type="submit" class="btn-primary btn-glow btn-submit" id="btn-submit">
             <span class="btn-text">CONFIRMAR MINHA PRESENÇA</span>
             <span class="btn-loader" hidden></span>
             <span class="btn-shine"></span>
           </button>
         </form>
-
+        <!-- MENSAGEM DE SUCESSO -->
         <div id="success-message" class="success-panel" hidden>
           <div class="success-icon">✓</div>
           <h3>PRESENÇA REGISTRADA!</h3>
@@ -194,15 +244,18 @@
           <p>Sua resposta foi recebida com sucesso. Estamos preparando esse momento com muito carinho e esperamos encontrar você em breve.</p>
           <p class="success-closing">Até lá!</p>
         </div>
-
+        <!-- MENSAGEM DE ERRO -->
         <div id="error-message" class="error-panel" hidden>
           <h3>Ops! Algo deu errado</h3>
-          <p id="error-text">Não foi possível registrar sua presença. Por favor, tente novamente.</p>
-          <button type="button" class="btn-secondary" id="btn-retry">Tentar novamente</button>
+          <p id="error-text">
+            Não foi possível registrar sua presença. Por favor, tente novamente.
+          </p>
+          <button type="button" class="btn-secondary" id="btn-retry">
+            Tentar novamente
+          </button>
         </div>
       </section>
-
-      <!-- Compartilhar -->
+      <!-- COMPARTILHAMENTO -->
       <section class="invite-section section-share" id="section-share">
         <div class="share-card">
           <p class="share-title">Gostou do convite?</p>
@@ -216,12 +269,40 @@
               COPIAR LINK
             </button>
           </div>
-          <p id="copy-feedback" class="copy-feedback" hidden>Link copiado!</p>
+          <p id="copy-feedback" class="copy-feedback" hidden>
+            Link copiado!
+          </p>
+        </div>
+      </section>
+      <!-- LOCALIZAÇÃO NO FINAL DO CONVITE -->
+      <section class="invite-section" id="section-location">
+        <div class="event-info-card">
+          <div class="event-info-location">
+            <span class="event-info-label">LOCALIZAÇÃO</span>
+            <h2 class="section-title">
+              Venha nos<br>
+              <span>visitar!</span>
+            </h2>
+            <span class="event-info-value">
+              Escola Estadual Prof.ª Anésia Gonçalves Longuinhos
+            </span>
+            <span class="event-info-address">
+              Rua Raimundo Nascimento, 432 — Santos Dumont<br>
+              Pirapora — Minas Gerais
+            </span>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Rua+Raimundo+Nascimento+432+Santos+Dumont+Pirapora+MG"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-map"
+            >
+              COMO CHEGAR
+            </a>
+          </div>
         </div>
       </section>
     </main>
-
-    <!-- Rodapé -->
+    <!-- RODAPÉ -->
     <footer class="invite-footer">
       <img src="logo.png" alt="ExporTech" class="footer-logo" />
       <div class="footer-text">
@@ -230,11 +311,12 @@
         <span>Escola Estadual Prof.ª Anésia Gonçalves Longuinhos</span>
         <span>Pirapora — Minas Gerais</span>
       </div>
-      <a href="#privacy" class="footer-privacy" id="btn-privacy">Aviso de Privacidade</a>
+      <a href="#privacy" class="footer-privacy" id="btn-privacy">
+        Aviso de Privacidade
+      </a>
     </footer>
   </section>
-
-  <!-- Modal de Privacidade -->
+  <!-- MODAL DE PRIVACIDADE -->
   <div id="privacy-modal" class="modal" hidden>
     <div class="modal-content">
       <button class="modal-close" id="close-privacy" aria-label="Fechar">×</button>
@@ -256,7 +338,6 @@
       <p>Para solicitar exclusão ou correção de dados, entre em contato com a escola pelo e-mail oficial ou telefone institucional.</p>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
