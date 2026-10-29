@@ -971,3 +971,10 @@ body {
 [hidden] {
   display: none !important;
 }
+/* FORÇAR OS NÚMEROS DA CONTAGEM REGRESSIVA A FICAREM BRANCOS */
+#countdown .countdown-number,
+#countdown .countdown-item .countdown-number,
+.countdown-number {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
