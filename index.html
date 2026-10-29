@@ -8,7 +8,7 @@
   <meta property="og:title" content="ExporTech 2026 — Convite Especial" />
   <meta property="og:description" content="Você recebeu um convite especial. Conhecimento que transforma. Talentos que inspiram." />
   <meta property="og:image" content="logo.png" />
-  <title>ExporTech 2026 — Convite Digital</title>
+  <title>ExporTech 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -16,105 +16,165 @@
 </head>
 <body>
   <canvas id="particles-canvas" aria-hidden="true"></canvas>
-  <!-- ========== TELA 1: MISTÉRIO ========== -->
+  <!-- ==========================================
+       TELA 1 — CONVITE MISTERIOSO
+       ========================================== -->
   <section id="screen-mystery" class="screen active" role="main">
     <div class="mystery-content">
       <div class="mystery-glow"></div>
       <h1 class="mystery-title">
-        VOCÊ RECEBEU UM<br>
+        VOCÊ RECEBEU UM<br />
         <span>CONVITE ESPECIAL</span>
       </h1>
       <p class="mystery-subtitle">
-        Uma experiência está prestes a ser revelada.<br>
+        Uma experiência está prestes a ser revelada.<br />
         Você está preparado?
       </p>
-      <button id="btn-discover" class="btn-primary btn-glow" aria-label="Descobrir meu convite">
+      <button
+        id="btn-discover"
+        class="btn-primary btn-glow"
+        aria-label="Descobrir meu convite"
+      >
         <span class="btn-text">DESCOBRIR MEU CONVITE</span>
         <span class="btn-shine"></span>
       </button>
     </div>
   </section>
-  <!-- ========== TELA 2: CONVITE COMPLETO ========== -->
+  <!-- ==========================================
+       TELA 2 — CONVITE COMPLETO
+       ========================================== -->
   <section id="screen-invite" class="screen" aria-hidden="true">
     <main class="invite-main">
-      <!-- LOGO + IDENTIDADE -->
+      <!-- LOGO E IDENTIDADE -->
       <section class="hero-logo-section">
         <div class="logo-wrapper">
           <div class="logo-ring"></div>
           <div class="logo-ring logo-ring-2"></div>
-          <img src="logo.png" alt="Logo oficial ExporTech" class="logo-hero" />
+          <img
+            src="logo.png"
+            alt="Logo oficial ExporTech"
+            class="logo-hero"
+          />
         </div>
         <h1 class="hero-title">EXPORTECH 2026</h1>
         <p class="hero-tagline">EDUCAÇÃO E TECNOLOGIA</p>
         <p class="hero-quote">
-          Conhecimento que transforma.<br>
-          Talentos que inspiram.<br>
+          Conhecimento que transforma.<br />
+          Talentos que inspiram.<br />
           Futuro que começa agora.
         </p>
       </section>
-      <!-- CONVITE -->
+      <!-- ==========================================
+           APRESENTAÇÃO DO CONVITE
+           ========================================== -->
       <section class="invite-section" id="section-invite">
         <h2 class="section-title">
-          Você é nosso<br>
+          Você é nosso<br />
           <span>convidado especial</span>
         </h2>
         <div class="invite-card">
-          <p>É com grande entusiasmo que convidamos você e sua família para a <strong>ExporTech 2026 — Educação e Tecnologia</strong>!</p>
-          <p>Este será um momento especial de valorização do conhecimento, do protagonismo estudantil e das oportunidades que a educação pode proporcionar em nossa escola.</p>
-          <p>Queremos compartilhar com você a importância de acreditar no potencial dos nossos estudantes, reconhecer suas conquistas e construir novas perspectivas para o futuro.</p>
-          <p>Sua presença torna esse momento ainda mais significativo.</p>
-          <p>Venha fazer parte dessa experiência e prestigiar uma iniciativa que aproxima a escola, as famílias e a comunidade.</p>
-          <p class="invite-closing">Esperamos por você!</p>
+          <p>
+            É com grande entusiasmo que convidamos você e sua família para a
+            <strong>ExporTech 2026 — Educação e Tecnologia</strong>!
+          </p>
+          <p>
+            Este será um momento especial de valorização do conhecimento,
+            do protagonismo estudantil e das oportunidades que a educação
+            pode proporcionar em nossa escola.
+          </p>
+          <p>
+            Queremos compartilhar com você a importância de acreditar no
+            potencial dos nossos estudantes, reconhecer suas conquistas e
+            construir novas perspectivas para o futuro.
+          </p>
+          <p>
+            Sua presença torna esse momento ainda mais significativo.
+          </p>
+          <p>
+            Venha fazer parte dessa experiência e prestigiar uma iniciativa
+            que aproxima a escola, as famílias e a comunidade.
+          </p>
+          <p class="invite-closing">
+            Esperamos por você!
+          </p>
         </div>
       </section>
-      <!-- DATA, HORÁRIO E CONTAGEM REGRESSIVA -->
+      <!-- ==========================================
+           DATA, HORÁRIO E CONTAGEM REGRESSIVA
+           TUDO NO MESMO CARD
+           ========================================== -->
       <section class="invite-section" id="section-agenda">
-        <div class="event-info-card">
+        <div class="event-info-card event-info-complete">
+          <!-- DATA E HORÁRIO -->
           <div class="event-info-row">
             <div class="event-info-item">
-              <span class="event-info-label">DATA</span>
-              <span class="event-info-value">05 de Novembro de 2026</span>
+              <span class="event-info-label">
+                DATA DO EVENTO
+              </span>
+              <span class="event-info-value">
+                05 de Novembro de 2026
+              </span>
             </div>
             <div class="event-info-divider"></div>
             <div class="event-info-item">
-              <span class="event-info-label">HORÁRIO</span>
-              <span class="event-info-value">18:30</span>
+              <span class="event-info-label">
+                HORÁRIO
+              </span>
+              <span class="event-info-value">
+                18:30
+              </span>
             </div>
           </div>
-        </div>
-        <!-- CONTAGEM REGRESSIVA -->
-        <div class="countdown-container" id="countdown">
-          <p class="countdown-label">CONTAGEM REGRESSIVA</p>
-          <div class="countdown-grid">
-            <div class="countdown-item">
-              <span class="countdown-number" id="cd-days">00</span>
-              <span class="countdown-unit">DIAS</span>
-            </div>
-            <div class="countdown-item">
-              <span class="countdown-number" id="cd-hours">00</span>
-              <span class="countdown-unit">HORAS</span>
-            </div>
-            <div class="countdown-item">
-              <span class="countdown-number" id="cd-mins">00</span>
-              <span class="countdown-unit">MIN</span>
-            </div>
-            <div class="countdown-item">
-              <span class="countdown-number" id="cd-secs">00</span>
-              <span class="countdown-unit">SEG</span>
+          <!-- CONTAGEM REGRESSIVA -->
+          <div class="countdown-container" id="countdown">
+            <p class="countdown-label">
+              CONTAGEM REGRESSIVA
+            </p>
+            <div class="countdown-grid">
+              <div class="countdown-item">
+                <span class="countdown-number" id="cd-days">00</span>
+                <span class="countdown-unit">DIAS</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="cd-hours">00</span>
+                <span class="countdown-unit">HORAS</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="cd-mins">00</span>
+                <span class="countdown-unit">MIN</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="cd-secs">00</span>
+                <span class="countdown-unit">SEG</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- CONFIRMAÇÃO DE PRESENÇA -->
+      <!-- ==========================================
+           BOTÃO PARA CONFIRMAR PRESENÇA
+           ========================================== -->
+      <div class="rsvp-cta">
+        <a href="#section-rsvp" class="btn-primary btn-glow btn-rsvp-open">
+          <span class="btn-text">
+            CONFIRMAR PRESENÇA
+          </span>
+          <span class="btn-shine"></span>
+        </a>
+      </div>
+      <!-- ==========================================
+           FORMULÁRIO DE CONFIRMAÇÃO DE PRESENÇA
+           ========================================== -->
       <section class="invite-section" id="section-rsvp">
         <h2 class="section-title">
-          Confirme sua<br>
+          Confirme sua<br />
           <span>presença</span>
         </h2>
         <p class="rsvp-intro">
           Ajude nossa equipe a se organizar. O preenchimento é rápido.
         </p>
         <form id="rsvp-form" class="rsvp-form" novalidate>
+          <!-- NOME -->
           <div class="form-group">
             <label for="fullName">
               Nome completo <span class="required">*</span>
@@ -129,6 +189,7 @@
             />
             <span class="error-msg" id="error-name"></span>
           </div>
+          <!-- SÉRIE -->
           <div class="form-group">
             <label for="serie">
               Série de escolaridade
@@ -142,22 +203,40 @@
             />
             <span class="error-msg" id="error-serie"></span>
           </div>
+          <!-- CATEGORIA -->
           <div class="form-group">
             <label for="category">
               Categoria do visitante <span class="required">*</span>
             </label>
             <select id="category" name="category" required>
-              <option value="" disabled selected>Selecione uma opção</option>
-              <option value="Familiar ou responsável">Familiar ou responsável</option>
-              <option value="Estudante da escola">Estudante da escola</option>
-              <option value="Estudante visitante de outra escola">Estudante visitante de outra escola</option>
-              <option value="Professor ou profissional da educação">Professor ou profissional da educação</option>
-              <option value="Representante de instituição ou convidado">Representante de instituição ou convidado</option>
-              <option value="Membro da comunidade">Membro da comunidade</option>
-              <option value="Outro">Outro</option>
+              <option value="" disabled selected>
+                Selecione uma opção
+              </option>
+              <option value="Familiar ou responsável">
+                Familiar ou responsável
+              </option>
+              <option value="Estudante da escola">
+                Estudante da escola
+              </option>
+              <option value="Estudante visitante de outra escola">
+                Estudante visitante de outra escola
+              </option>
+              <option value="Professor ou profissional da educação">
+                Professor ou profissional da educação
+              </option>
+              <option value="Representante de instituição ou convidado">
+                Representante de instituição ou convidado
+              </option>
+              <option value="Membro da comunidade">
+                Membro da comunidade
+              </option>
+              <option value="Outro">
+                Outro
+              </option>
             </select>
             <span class="error-msg" id="error-category"></span>
           </div>
+          <!-- INSTITUIÇÃO -->
           <div class="form-group">
             <label for="institution">
               Instituição de ensino
@@ -171,6 +250,7 @@
             />
             <span class="error-msg" id="error-institution"></span>
           </div>
+          <!-- E-MAIL -->
           <div class="form-group">
             <label for="email">
               E-mail para contato <span class="required">*</span>
@@ -185,9 +265,11 @@
             />
             <span class="error-msg" id="error-email"></span>
           </div>
+          <!-- TELEFONE -->
           <div class="form-group">
             <label for="phone">
-              Telefone ou WhatsApp <span class="optional">(opcional)</span>
+              Telefone ou WhatsApp
+              <span class="optional">(opcional)</span>
             </label>
             <input
               type="tel"
@@ -197,6 +279,7 @@
               placeholder="(38) 99999-9999"
             />
           </div>
+          <!-- CONFIRMAÇÃO -->
           <div class="form-group">
             <label>
               Confirmação de presença <span class="required">*</span>
@@ -224,14 +307,27 @@
             </div>
             <span class="error-msg" id="error-presence"></span>
           </div>
+          <!-- AVISO DE PRIVACIDADE -->
           <div class="privacy-notice">
             <p>
               <strong>Aviso de Privacidade:</strong>
-              Os dados coletados serão utilizados exclusivamente para organização e comunicação relacionadas à ExporTech 2026. Não serão compartilhados com terceiros. O tratamento de dados de menores de idade segue as orientações da escola e a legislação vigente (LGPD). Ao enviar, você concorda com este uso.
+              Os dados coletados serão utilizados exclusivamente para
+              organização e comunicação relacionadas à ExporTech 2026.
+              Não serão compartilhados com terceiros. O tratamento de
+              dados de menores de idade segue as orientações da escola e
+              a legislação vigente (LGPD). Ao enviar, você concorda com
+              este uso.
             </p>
           </div>
-          <button type="submit" class="btn-primary btn-glow btn-submit" id="btn-submit">
-            <span class="btn-text">CONFIRMAR MINHA PRESENÇA</span>
+          <!-- ENVIAR -->
+          <button
+            type="submit"
+            class="btn-primary btn-glow btn-submit"
+            id="btn-submit"
+          >
+            <span class="btn-text">
+              CONFIRMAR MINHA PRESENÇA
+            </span>
             <span class="btn-loader" hidden></span>
             <span class="btn-shine"></span>
           </button>
@@ -240,9 +336,17 @@
         <div id="success-message" class="success-panel" hidden>
           <div class="success-icon">✓</div>
           <h3>PRESENÇA REGISTRADA!</h3>
-          <p>Obrigado por fazer parte da ExporTech 2026!</p>
-          <p>Sua resposta foi recebida com sucesso. Estamos preparando esse momento com muito carinho e esperamos encontrar você em breve.</p>
-          <p class="success-closing">Até lá!</p>
+          <p>
+            Obrigado por fazer parte da ExporTech 2026!
+          </p>
+          <p>
+            Sua resposta foi recebida com sucesso. Estamos preparando
+            esse momento com muito carinho e esperamos encontrar você
+            em breve.
+          </p>
+          <p class="success-closing">
+            Até lá!
+          </p>
         </div>
         <!-- MENSAGEM DE ERRO -->
         <div id="error-message" class="error-panel" hidden>
@@ -255,11 +359,17 @@
           </button>
         </div>
       </section>
-      <!-- COMPARTILHAMENTO -->
+      <!-- ==========================================
+           COMPARTILHAMENTO DO CONVITE
+           ========================================== -->
       <section class="invite-section section-share" id="section-share">
         <div class="share-card">
-          <p class="share-title">Gostou do convite?</p>
-          <p class="share-text">Compartilhe com familiares e amigos</p>
+          <p class="share-title">
+            Gostou do convite?
+          </p>
+          <p class="share-text">
+            Compartilhe com familiares e amigos
+          </p>
           <div class="share-buttons">
             <button id="btn-share" class="btn-primary btn-glow btn-share">
               <span class="btn-text">COMPARTILHAR</span>
@@ -274,20 +384,20 @@
           </p>
         </div>
       </section>
-      <!-- LOCALIZAÇÃO NO FINAL DO CONVITE -->
+      <!-- ==========================================
+           LOCALIZAÇÃO NO FINAL
+           ========================================== -->
       <section class="invite-section" id="section-location">
         <div class="event-info-card">
           <div class="event-info-location">
-            <span class="event-info-label">LOCALIZAÇÃO</span>
-            <h2 class="section-title">
-              Venha nos<br>
-              <span>visitar!</span>
-            </h2>
+            <span class="event-info-label">
+              LOCALIZAÇÃO
+            </span>
             <span class="event-info-value">
               Escola Estadual Prof.ª Anésia Gonçalves Longuinhos
             </span>
             <span class="event-info-address">
-              Rua Raimundo Nascimento, 432 — Santos Dumont<br>
+              Rua Raimundo Nascimento, 432 — Santos Dumont<br />
               Pirapora — Minas Gerais
             </span>
             <a
@@ -302,26 +412,52 @@
         </div>
       </section>
     </main>
-    <!-- RODAPÉ -->
+    <!-- ==========================================
+         RODAPÉ
+         ========================================== -->
     <footer class="invite-footer">
-      <img src="logo.png" alt="ExporTech" class="footer-logo" />
+      <img
+        src="logo.png"
+        alt="ExporTech"
+        class="footer-logo"
+      />
       <div class="footer-text">
         <strong>EXPORTECH 2026</strong>
         <span>EDUCAÇÃO E TECNOLOGIA</span>
-        <span>Escola Estadual Prof.ª Anésia Gonçalves Longuinhos</span>
-        <span>Pirapora — Minas Gerais</span>
+        <span>
+          Escola Estadual Prof.ª Anésia Gonçalves Longuinhos
+        </span>
+        <span>
+          Pirapora — Minas Gerais
+        </span>
       </div>
-      <a href="#privacy" class="footer-privacy" id="btn-privacy">
+      <a
+        href="#privacy"
+        class="footer-privacy"
+        id="btn-privacy"
+      >
         Aviso de Privacidade
       </a>
     </footer>
   </section>
-  <!-- MODAL DE PRIVACIDADE -->
+  <!-- ==========================================
+       MODAL DE PRIVACIDADE
+       ========================================== -->
   <div id="privacy-modal" class="modal" hidden>
     <div class="modal-content">
-      <button class="modal-close" id="close-privacy" aria-label="Fechar">×</button>
+      <button
+        class="modal-close"
+        id="close-privacy"
+        aria-label="Fechar"
+      >
+        ×
+      </button>
       <h3>Aviso de Privacidade</h3>
-      <p>A ExporTech 2026, promovida pela comunidade escolar da Escola Estadual Prof.ª Anésia Gonçalves Longuinhos, coleta os seguintes dados por meio do formulário de confirmação de presença:</p>
+      <p>
+        A ExporTech 2026, promovida pela comunidade escolar da Escola
+        Estadual Prof.ª Anésia Gonçalves Longuinhos, coleta os seguintes
+        dados por meio do formulário de confirmação de presença:
+      </p>
       <ul>
         <li>Nome completo</li>
         <li>Série</li>
@@ -332,12 +468,26 @@
         <li>Situação da confirmação de presença</li>
         <li>Data e horário do envio</li>
       </ul>
-      <p>Finalidade: organização do evento, estimativa de público e comunicação relacionada exclusivamente à ExporTech 2026.</p>
-      <p>Os dados não serão comercializados nem compartilhados com terceiros. O acesso é restrito à equipe responsável pela organização.</p>
-      <p>Tratamento de dados de menores: respeitamos a LGPD e as orientações da escola. Responsáveis devem preencher ou autorizar o envio de dados de menores de idade.</p>
-      <p>Para solicitar exclusão ou correção de dados, entre em contato com a escola pelo e-mail oficial ou telefone institucional.</p>
+      <p>
+        Finalidade: organização do evento, estimativa de público e
+        comunicação relacionada exclusivamente à ExporTech 2026.
+      </p>
+      <p>
+        Os dados não serão comercializados nem compartilhados com
+        terceiros. O acesso é restrito à equipe responsável pela organização.
+      </p>
+      <p>
+        Tratamento de dados de menores: respeitamos a LGPD e as orientações
+        da escola. Responsáveis devem preencher ou autorizar o envio de
+        dados de menores de idade.
+      </p>
+      <p>
+        Para solicitar exclusão ou correção de dados, entre em contato
+        com a escola pelo e-mail oficial ou telefone institucional.
+      </p>
     </div>
   </div>
+  <!-- JAVASCRIPT -->
   <script src="script.js"></script>
 </body>
 </html>
