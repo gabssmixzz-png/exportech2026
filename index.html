@@ -266,19 +266,22 @@
             <span class="error-msg" id="error-email"></span>
           </div>
           <!-- TELEFONE -->
-          <div class="form-group">
-            <label for="phone">
-              Telefone ou WhatsApp
-              <span class="optional">(opcional)</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              autocomplete="tel"
-              placeholder="(38) 99999-9999"
-            />
-          </div>
+<div class="form-group">
+  <label for="phone">
+    Telefone ou WhatsApp <span class="required">*</span>
+  </label>
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    autocomplete="tel"
+    inputmode="numeric"
+    placeholder="(38) 99999-9999"
+    maxlength="15"
+    required
+  />
+  <span class="error-msg" id="error-phone"></span>
+</div>
           <!-- CONFIRMAÇÃO -->
           <div class="form-group">
             <label>
