@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificado | ExporTech 2026</title>
+  <meta name="theme-color" content="#020617" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    :root {
+      --black: #020617;
+      --navy: #0a1628;
+      --blue: #1e6fff;
+      --cyan: #22d3ee;
+      --white: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(ellipse at top, #0a1628 0%, #020617 60%);
+      color: var(--white);
+      min-height: 100dvh;
+      padding: 1.5rem 1rem 3rem;
+    }
+    .wrap { max-width: 520px; margin: 0 auto; }
+    .logo {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .logo img { max-width: 220px; width: 100%; height: auto; }
+    .brand {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      color: var(--cyan);
+      margin-top: 0.5rem;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.35rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
+    .card {
+      background: rgba(10, 22, 40, 0.75);
+      border: 1px solid rgba(30, 111, 255, 0.25);
+      border-radius: 16px;
+      padding: 1.5rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+      color: var(--white);
+    }
+    input {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(30, 111, 255, 0.35);
+      background: rgba(2, 6, 23, 0.7);
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.95rem 1.25rem;
+      border: none;
+      border-radius: 999px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #1e6fff, #2563eb);
+      color: white;
+      box-shadow: 0 4px 20px rgba(30, 111, 255, 0.35);
+    }
+    .btn-primary:hover { transform: translateY(-1px); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--cyan);
+      border: 1px solid rgba(34, 211, 238, 0.45);
+      margin-top: 0.75rem;
+    }
+    .msg {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0.75rem 0;
+    }
+    .msg.error { color: #f87171; }
+    .msg.ok { color: #34d399; }
+    .results { display: flex; flex-direction: column; gap: 0.65rem; }
+    .result-item {
+      background: rgba(15, 39, 68, 0.7);
+      border: 1px solid rgba(30, 111, 255, 0.25);
+      border-radius: 12px;
+      padding: 0.95rem 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .result-item:hover, .result-item.selected {
+      border-color: var(--cyan);
+      background: rgba(30, 111, 255, 0.12);
+    }
+    .result-name { font-weight: 600; margin-bottom: 0.2rem; }
+    .result-phone { font-size: 0.85rem; color: var(--muted); }
+    .preview {
+      background: white;
+      color: #111;
+      border-radius: 8px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      margin: 1rem 0;
+      min-height: 200px;
+    }
+    .preview h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      color: #1e3a8a;
+      margin-bottom: 0.75rem;
+    }
+    .preview .nome {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0.75rem 0;
+      color: #0f172a;
+    }
+    .preview p { font-size: 0.85rem; line-height: 1.5; color: #334155; }
+    .hidden { display: none !important; }
+    .steps { font-size: 0.75rem; color: var(--muted); text-align: center; margin-bottom: 1rem; letter-spacing: 0.05em; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo">
+      <img src="logo.png" alt="ExporTech" />
+      <div class="brand">EXPORTECH 2026</div>
+    </div>
+
+    <h1>Certificado de Participação</h1>
+    <p class="subtitle">Busque sua inscrição e baixe seu certificado</p>
+
+    <!-- ETAPA 1: Busca -->
+    <section id="step-search" class="card">
+      <div class="steps">PASSO 1 DE 3 — BUSCAR INSCRIÇÃO</div>
+      <label for="searchName">Digite seu nome completo</label>
+      <input type="text" id="searchName" placeholder="Ex: Maria Silva Santos" autocomplete="name" />
+      <button class="btn btn-primary" id="btnSearch">BUSCAR</button>
+      <p class="msg" id="searchMsg"></p>
+    </section>
+
+    <!-- ETAPA 2: Seleção -->
+    <section id="step-select" class="card hidden">
+      <div class="steps">PASSO 2 DE 3 — CONFIRME SEUS DADOS</div>
+      <p class="msg" style="margin-bottom:1rem;">Selecione o registro que corresponde a você (veja o final do telefone):</p>
+      <div class="results" id="results"></div>
+      <button class="btn btn-secondary" id="btnBackSearch">BUSCAR DE NOVO</button>
+    </section>
+
+    <!-- ETAPA 3: Certificado -->
+    <section id="step-cert" class="card hidden">
+      <div class="steps">PASSO 3 DE 3 — SEU CERTIFICADO</div>
+      <p class="msg ok" id="confirmMsg"></p>
+      <div class="preview" id="preview">
+        <h2>CERTIFICADO DE PARTICIPAÇÃO</h2>
+        <p>Certificamos que</p>
+        <div class="nome" id="previewName">NOME</div>
+        <p>participou do <strong>ExporTech 2026 — Educação e Tecnologia</strong>, realizado em 05 de novembro de 2026, na Escola Estadual Prof.ª Anésia Gonçalves Longuinhos, Pirapora/MG.</p>
+        <p style="margin-top:1rem;font-size:0.75rem;color:#64748b;">Equipe ExporTech 2026 • A.G.L.</p>
+      </div>
+      <button class="btn btn-primary" id="btnDownload">BAIXAR CERTIFICADO PDF</button>
+      <button class="btn btn-secondary" id="btnRestart">NOVA BUSCA</button>
+    </section>
+  </div>
+
+  <script>
+    // Cole aqui o link do Apps Script (doGet de busca)
+    const SEARCH_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyCOpfrSJd3FU9NPcaEWJlqA0b0w4_VRvjE--C9MNH9r5hKs8_xM49tO-fumHFyQd5C/exec';
+
+    const stepSearch = document.getElementById('step-search');
+    const stepSelect = document.getElementById('step-select');
+    const stepCert = document.getElementById('step-cert');
+    const searchInput = document.getElementById('searchName');
+    const searchMsg = document.getElementById('searchMsg');
+    const resultsEl = document.getElementById('results');
+    const previewName = document.getElementById('previewName');
+    const confirmMsg = document.getElementById('confirmMsg');
+
+    let selectedPerson = null;
+
+    function showStep(step) {
+      [stepSearch, stepSelect, stepCert].forEach(s => s.classList.add('hidden'));
+      step.classList.remove('hidden');
+    }
+
+    function maskPhone(phone) {
+      const digits = String(phone || '').replace(/\D/g, '');
+      if (digits.length < 4) return '****';
+      return '****-' + digits.slice(-4);
+    }
+
+    document.getElementById('btnSearch').addEventListener('click', async () => {
+      const name = searchInput.value.trim();
+      if (name.length < 3) {
+        searchMsg.textContent = 'Digite pelo menos 3 letras do nome.';
+        searchMsg.className = 'msg error';
+        return;
+      }
+
+      searchMsg.textContent = 'Buscando...';
+      searchMsg.className = 'msg';
+      document.getElementById('btnSearch').disabled = true;
+
+      try {
+        // Se ainda não configurou o endpoint, usa modo demonstração
+        if (!SEARCH_ENDPOINT || SEARCH_ENDPOINT.includes('COLE_AQUI')) {
+          // Demonstração local (remover quando o endpoint estiver pronto)
+          await new Promise(r => setTimeout(r, 600));
+          const demo = [
+            { fullName: name, phone: '38999991234' },
+            { fullName: name + ' Silva', phone: '38988885678' }
+          ];
+          renderResults(demo);
+          return;
+        }
+
+        const url = SEARCH_ENDPOINT + '?nome=' + encodeURIComponent(name);
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (!data.results || data.results.length === 0) {
+          searchMsg.textContent = 'Nenhuma inscrição encontrada com esse nome. Verifique a grafia.';
+          searchMsg.className = 'msg error';
+          return;
+        }
+
+        renderResults(data.results);
+      } catch (err) {
+        console.error(err);
+        searchMsg.textContent = 'Erro na busca. Tente novamente.';
+        searchMsg.className = 'msg error';
+      } finally {
+        document.getElementById('btnSearch').disabled = false;
+      }
+    });
+
+    function renderResults(list) {
+      resultsEl.innerHTML = '';
+      list.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'result-item';
+        div.innerHTML = `
+          <div class="result-name">${item.fullName || item.nome}</div>
+          <div class="result-phone">Telefone final: ${maskPhone(item.phone || item.telefone)}</div>
+        `;
+        div.addEventListener('click', () => {
+          selectedPerson = item;
+          previewName.textContent = item.fullName || item.nome;
+          confirmMsg.textContent = 'Inscrição confirmada para ' + (item.fullName || item.nome);
+          showStep(stepCert);
+        });
+        resultsEl.appendChild(div);
+      });
+      showStep(stepSelect);
+      searchMsg.textContent = '';
+    }
+
+    document.getElementById('btnBackSearch').addEventListener('click', () => {
+      showStep(stepSearch);
+    });
+
+    document.getElementById('btnRestart').addEventListener('click', () => {
+      selectedPerson = null;
+      searchInput.value = '';
+      showStep(stepSearch);
+    });
+
+    document.getElementById('btnDownload').addEventListener('click', async () => {
+      if (!selectedPerson) return;
+      const nome = selectedPerson.fullName || selectedPerson.nome || 'Participante';
+      const phone = selectedPerson.phone || selectedPerson.telefone || '';
+
+      // Registra na planilha que o certificado foi emitido
+      try {
+        await fetch(SEARCH_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'certificado',
+            fullName: nome,
+            phone: phone
+          })
+        });
+      } catch (err) {
+        console.warn('Não foi possível registrar emissão:', err);
+      }
+
+      generatePDF(nome);
+    });
+
+    function generatePDF(nome) {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+
+      // Fundo escuro
+      doc.setFillColor(2, 6, 23);
+      doc.rect(0, 0, 297, 210, 'F');
+
+      // Borda
+      doc.setDrawColor(30, 111, 255);
+      doc.setLineWidth(0.8);
+      doc.rect(10, 10, 277, 190);
+
+      // Título
+      doc.setTextColor(34, 211, 238);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.text('EXPORTECH 2026', 148.5, 35, { align: 'center' });
+
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(22);
+      doc.text('CERTIFICADO DE PARTICIPAÇÃO', 148.5, 55, { align: 'center' });
+
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(12);
+      doc.setTextColor(200, 210, 220);
+      doc.text('Certificamos que', 148.5, 80, { align: 'center' });
+
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(20);
+      doc.setTextColor(255, 255, 255);
+      doc.text(nome.toUpperCase(), 148.5, 95, { align: 'center' });
+
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(12);
+      doc.setTextColor(180, 190, 200);
+      const texto = 'participou do ExporTech 2026 — Educação e Tecnologia, realizado em 05 de novembro de 2026,';
+      const texto2 = 'na Escola Estadual Prof.ª Anésia Gonçalves Longuinhos, Pirapora/MG.';
+      doc.text(texto, 148.5, 115, { align: 'center' });
+      doc.text(texto2, 148.5, 123, { align: 'center' });
+
+      doc.setFontSize(10);
+      doc.setTextColor(34, 211, 238);
+      doc.text('Equipe ExporTech 2026  •  A.G.L.', 148.5, 160, { align: 'center' });
+
+      doc.setTextColor(100, 116, 139);
+      doc.setFontSize(8);
+      doc.text('TECNOLOGIA  •  CONHECIMENTO  •  FUTURO', 148.5, 175, { align: 'center' });
+
+      doc.save('Certificado-ExporTech-2026.pdf');
+    }
+
+    // Enter na busca
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') document.getElementById('btnSearch').click();
+    });
+  </script>
+</body>
+</html>
